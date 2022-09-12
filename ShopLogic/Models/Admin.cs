@@ -42,7 +42,7 @@ namespace ShopLogic.Models
             product.Delete();
         }
 
-        public void UpdateProduct(Product product, string? name = null, string? description = null, int totalAmount = -1, Category? category = null, int price)
+        public void UpdateProduct(Product product, string? name = null, string? description = null, int totalAmount = -1, Category? category = null, int price=-1)
         {
             product.Update(name, description, totalAmount, category, price);
         }
