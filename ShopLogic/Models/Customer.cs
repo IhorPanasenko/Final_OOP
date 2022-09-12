@@ -23,6 +23,7 @@ namespace ShopLogic.Models
             CreditCard = new CreditCard(Number, Money);
         }
 
+
         public void Buy()
         {
             throw new NotImplementedException();
