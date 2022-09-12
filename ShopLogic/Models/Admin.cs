@@ -17,14 +17,14 @@ namespace ShopLogic.Models
             Password = password;
         }
 
-        public Category CrateCategory()
+        public Category CrateCategory(string Name)
         {
-            
+            return new Category(Name);
         }
 
-        public void DeleteCategory()
+        public void DeleteCategory(Category category)
         {
-            throw new NotImplementedException();
+            category.Name = $"Category {category.Name} Was Deleted";
         }
 
         public void UpdateCategory()

@@ -1,5 +1,7 @@
 ﻿
 
+using System;
+
 namespace ShopLogic.Models
 {
     internal class Category
@@ -10,5 +12,6 @@ namespace ShopLogic.Models
         {
             Name = name;
         }
+
     }
 }
