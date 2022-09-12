@@ -5,13 +5,13 @@ namespace ShopLogic.Models
 {
     internal class Warehouse
     {
-        public List<Product> warehouseProducts;
+        public Product WarehouseProduct { get; set; }
         public int Quantity { get; set; }
         public string Adress { get; init; }
 
-        public Warehouse(List<Product> warehouseProducts, int quantity, string adress)
+        public Warehouse(Product warehouseProduct, int quantity, string adress)
         {
-            this.warehouseProducts = warehouseProducts;
+            WarehouseProduct = warehouseProduct;
             Quantity = quantity;
             Adress = adress;
         }
