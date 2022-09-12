@@ -1,9 +1,26 @@
-﻿namespace ShopLogic
+﻿using ShopLogic.Models;
+
+namespace ShopLogic
 {
     internal interface IBuyable
     {
-        public bool Buy(string DeliveryAddress);
+        public void RegisterCreditCard(int Number, decimal Money);
 
-        public void RegisterCreditCard(int NUmber, decimal Money);
+        public bool AddProductToBasket(Product product, int quantity);
+
+        public void ClearBasket();
+
+        public void UpdateQuantityOfProduct(Product product, int newQuantity);
+
+        public void RemoveFromBasket(Product product);
+
+        public void IncreaseQuantityOfProduct(Product product);
+
+        public void DecreaseQuantity(Product product);
+
+        public string GetCheckByLastorder();
+
+        public bool Buy(string deliveryAddress);
+
     }
 }
