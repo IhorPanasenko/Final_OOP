@@ -4,10 +4,10 @@ namespace ShopLogic
 {
     internal class Category
     {
-        string Name { get; set; }
+        public string Name { get; set; }
 
 
-        internal Category(string name)
+        public Category(string name)
         {
             Name = name;
         }
