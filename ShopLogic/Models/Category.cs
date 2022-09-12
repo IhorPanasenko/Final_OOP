@@ -1,10 +1,11 @@
 ﻿
+using ShopLogic.Interfaces;
 using System;
 using System.Data;
 
 namespace ShopLogic.Models
 {
-    internal class Category
+    internal class Category : ICRUD
     {
         public string Name { get; set; }
 
@@ -12,11 +13,13 @@ namespace ShopLogic.Models
         {
             Name = name;
         }
-        public void UpdateCategory(string newName)
+
+        public void Update(string newName)
         {
-            Name = newName!=null?newName:Name;
+            Name = newName != null ? newName : Name;
         }
-        public void DeleteCategory()
+
+        public void Delete()
         {
             Name = $"Category {Name} Was Deleted";
         }
