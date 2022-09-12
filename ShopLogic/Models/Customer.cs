@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Reflection.Metadata.Ecma335;
 
 namespace ShopLogic.Models
 {
@@ -58,6 +59,20 @@ namespace ShopLogic.Models
         public void DecreaseQuantity(Product product)
         {
             Basket.DecreaseQuantity(product);
+        }
+        public string GetCheckByLastorder()
+        {
+            string res;
+            if (Order != null)
+            {
+                res = Order.GetCheck();
+            }
+            else
+            {
+                res = "You havent bought anything yet";
+            }
+            //Console.WriteLine(res);
+            return res;
         }
         public bool Buy(string deliveryAddress)
         {
