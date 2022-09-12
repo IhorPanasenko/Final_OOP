@@ -1,6 +1,6 @@
 ﻿
-
 using System;
+using System.Data;
 
 namespace ShopLogic.Models
 {
@@ -12,6 +12,13 @@ namespace ShopLogic.Models
         {
             Name = name;
         }
-
+        public void UpdateCategory(string newName)
+        {
+            Name = newName!=null?newName:Name;
+        }
+        public void DeleteCategory()
+        {
+            Name = $"Category {Name} Was Deleted";
+        }
     }
 }
