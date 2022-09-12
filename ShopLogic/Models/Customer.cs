@@ -17,5 +17,10 @@ namespace ShopLogic
             Password = password;
             DateOfRegistration = dateOfRegistration;
         }
+
+        void IBuyable.Buy()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
