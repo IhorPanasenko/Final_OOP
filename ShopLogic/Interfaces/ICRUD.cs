@@ -5,6 +5,6 @@ namespace ShopLogic.Interfaces
     {
         public void Update();
         public void Delete();
-        public void Read();
+       // public void Read();
     }
 }
