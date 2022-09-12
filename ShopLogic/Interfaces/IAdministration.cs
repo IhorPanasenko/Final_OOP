@@ -6,7 +6,7 @@ namespace ShopLogic.Interfaces
     {
         public Category CrateCategory(string Name);
         public void DeleteCategory();
-        public void UpdateCategory();
+        public void UpdateCategory(Category category, string newName);
         public void CreateProduct();
         public void DeleteProduct();
         public void UpdateProduct();
