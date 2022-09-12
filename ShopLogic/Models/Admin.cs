@@ -32,9 +32,9 @@ namespace ShopLogic.Models
             category.UpdateCategory(newName);
         }
 
-        public void CreateProduct()
+        public Product CreateProduct(string name, string description, int totalAmount, Category category)
         {
-            throw new NotImplementedException();
+            return new Product(name, description, totalAmount, category);  
         }
 
         public void DeleteProduct()
@@ -46,5 +46,6 @@ namespace ShopLogic.Models
         {
             throw new NotImplementedException();
         }
+
     }
 }
