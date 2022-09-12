@@ -25,6 +25,12 @@ namespace ShopLogic.Models
             Category.DeleteCategory();
         }
 
-       
+       public void Update(string? name = null, string? description = null, int totalAmount = -1, Category? category = null)
+        {
+            Name = name != null ? name : Name;
+            Description = description != null ? description : Description;
+            TotalAmount = totalAmount > 0 ? totalAmount : TotalAmount;
+            Category = category != null ? category : Category;
+        }
     }
 }

@@ -39,12 +39,12 @@ namespace ShopLogic.Models
 
         public void DeleteProduct(Product product)
         {
-            
+            product.Delete();
         }
 
-        public void UpdateProduct(string? name = null, string? description = null, int? totalAmount = -1, Category? category = null)
+        public void UpdateProduct(Product product, string? name = null, string? description = null, int totalAmount = -1, Category? category = null)
         {
-            throw new NotImplementedException();
+            product.Update(name, description, totalAmount, category);
         }
     }
 }
