@@ -9,6 +9,7 @@ namespace ShopLogic.Models
         public string Password { get; set; }
         public DateTime DateOfRegistration { get; init; }
         public CreditCard? CreditCard { get; set; }
+        public Order? Order {get; set;}
 
         public Customer(string login, string password, DateTime dateOfRegistration, string first_name, string last_name, DateTime birthDate, string emailAdress)
             : base(first_name, last_name, birthDate, emailAdress)
@@ -23,6 +24,12 @@ namespace ShopLogic.Models
             CreditCard = new CreditCard(Number, Money);
         }
 
+        public bool AddProductToBasket(Product product, quantity)
+        {
+
+        }
+
+        
 
         public void Buy()
         {
