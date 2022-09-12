@@ -14,5 +14,35 @@ namespace ShopLogic
             Login = login;
             Password = password;
         }
+
+        public void CrateCategory()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void DeleteCategory()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void UpdateCategory()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void CreateProduct()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void DeleteProduct()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void UpdateProduct()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
