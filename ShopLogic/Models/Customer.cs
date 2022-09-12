@@ -59,9 +59,30 @@ namespace ShopLogic.Models
         {
             Basket.DecreaseQuantity(product);
         }
-        public void Buy()
+        public bool Buy(string deliveryAddress)
         {
-            throw new NotImplementedException();
+            decimal price = Basket.GetTotalPrice();
+            Order = new Order(DateTime.Today, Basket, this, price, deliveryAddress);
+            if(CreditCard == null)
+            {
+                Console.WriteLine("You must register credit card before buying");
+                return false;
+            }
+            else
+            {
+                if (CreditCard.Money<price)
+                {
+                    Console.WriteLine("You havent got enough money to buy this products");
+                    return false;
+                }
+                else
+                {
+                    Console.WriteLine("We got your payment");
+                    //Basket.ClearBasket();
+                    return true;
+                }
+            }
+            
         }
     }
 }

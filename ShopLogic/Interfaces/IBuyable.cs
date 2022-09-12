@@ -2,7 +2,7 @@
 {
     internal interface IBuyable
     {
-        public void Buy();
+        public bool Buy(string DeliveryAddress);
 
         public void RegisterCreditCard(int NUmber, decimal Money);
     }
