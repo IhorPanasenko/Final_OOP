@@ -53,7 +53,11 @@ namespace ShopLogic.Models
         }
         public void IncreaseQuantityOfProduct(Product product)
         {
-            Basket.
+            Basket.IncreaseQuantity(product);
+        }
+        public void DecreaseQuantity(Product product)
+        {
+            Basket.DecreaseQuantity(product);
         }
 
 
