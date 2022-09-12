@@ -32,9 +32,9 @@ namespace ShopLogic.Models
             category.UpdateCategory(newName);
         }
 
-        public Product CreateProduct(string name, string description, int totalAmount, Category category)
+        public Product CreateProduct(string name, string description, int totalAmount, Category category, int price)
         {
-            return new Product(name, description, totalAmount, category);  
+            return new Product(name, description, totalAmount, category, price);  
         }
 
         public void DeleteProduct(Product product)
@@ -42,9 +42,9 @@ namespace ShopLogic.Models
             product.Delete();
         }
 
-        public void UpdateProduct(Product product, string? name = null, string? description = null, int totalAmount = -1, Category? category = null)
+        public void UpdateProduct(Product product, string? name = null, string? description = null, int totalAmount = -1, Category? category = null, int price)
         {
-            product.Update(name, description, totalAmount, category);
+            product.Update(name, description, totalAmount, category, price);
         }
     }
 }
