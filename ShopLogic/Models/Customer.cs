@@ -43,8 +43,21 @@ namespace ShopLogic.Models
         {
             Basket.ClearBasket();
         }
+        public void UpdateQuantityOfProduct(Product product, int newQuantity)
+        {
+            Basket.UpdateQuantityOfProduct(product, newQuantity);
+        }
+        public void RemoveFromBasket(Product product)
+        {
+            Basket.RemoveFromBasket(product);
+        }
+        public void IncreaseQuantityOfProduct(Product product)
+        {
+            Basket.
+        }
 
-        
+
+
 
         public void Buy()
         {
