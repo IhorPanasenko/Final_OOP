@@ -10,6 +10,7 @@ namespace ShopLogic.Models
         public DateTime DateOfRegistration { get; init; }
         public CreditCard? CreditCard { get; set; }
         public Order? Order {get; set;}
+        public Basket Basket { get; set; }
 
         public Customer(string login, string password, DateTime dateOfRegistration, string first_name, string last_name, DateTime birthDate, string emailAdress)
             : base(first_name, last_name, birthDate, emailAdress)
@@ -17,6 +18,7 @@ namespace ShopLogic.Models
             Login = login;
             Password = password;
             DateOfRegistration = dateOfRegistration;
+            Basket = new Basket();
         }
         
         public void RegisterCreditCard(int Number, decimal Money)
@@ -24,8 +26,19 @@ namespace ShopLogic.Models
             CreditCard = new CreditCard(Number, Money);
         }
 
-        public bool AddProductToBasket(Product product, quantity)
+        public bool AddProductToBasket(Product product, int quantity)
         {
+            if (quantity <= product.TotalAmount)
+            {
+                Basket.AddProducts(product, quantity);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("You want to buy more than we have in warehouse");
+                return false;
+            }
+
 
         }
 
