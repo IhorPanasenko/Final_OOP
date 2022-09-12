@@ -62,6 +62,33 @@ namespace ShopLogic.Models
             BasketOfProduct.Clear();
         }
 
+        public void DecreaseQuantity(Product product)
+        {
+            if (IsInBasket(product))
+            {
+                foreach (SingleOrder pr in BasketOfProduct)
+                {
+                    if (pr.SingleProduct.Name == product.Name)
+                    {
+                        pr.DecreaseQuantity();
+                    }
+                }
+            }
+        }
+        public void IncreaseQuantity(Product product)
+        {
+            if (IsInBasket(product))
+            {
+                foreach (SingleOrder pr in BasketOfProduct)
+                {
+                    if (pr.SingleProduct.Name == product.Name)
+                    {
+                        pr.IncreaseQuantity();
+                    }
+                }
+            }
+        }
+
         private bool IsInBasket(Product product)
         {
             bool IsIn = false;
