@@ -15,5 +15,16 @@ namespace ShopLogic.Models
             TotalAmount = totalAmount;
             Category = category;
         }
+
+        public void Delete()
+        {
+            Console.WriteLine($"product {Name} in category {Category.Name} was deleted");
+            Name = "";
+            Description = "";
+            TotalAmount = -1;
+            Category.DeleteCategory();
+        }
+
+       
     }
 }

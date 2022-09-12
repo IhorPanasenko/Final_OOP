@@ -37,15 +37,14 @@ namespace ShopLogic.Models
             return new Product(name, description, totalAmount, category);  
         }
 
-        public void DeleteProduct()
+        public void DeleteProduct(Product product)
+        {
+            
+        }
+
+        public void UpdateProduct(string? name = null, string? description = null, int? totalAmount = -1, Category? category = null)
         {
             throw new NotImplementedException();
         }
-
-        public void UpdateProduct()
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }
