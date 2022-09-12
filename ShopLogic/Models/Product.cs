@@ -3,10 +3,10 @@ namespace ShopLogic.Models
 {
     internal class Product
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public int TotalAmount { get; set; }
-        public Category Category { get; set; }
+        internal string Name { get; set; }
+        internal string Description { get; set; }
+        internal int TotalAmount { get; set; }
+        internal Category Category { get; set; }
 
         public Product(string name, string description, int totalAmount, Category category)
         {

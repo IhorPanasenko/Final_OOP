@@ -6,7 +6,7 @@ namespace ShopLogic.Models
 {
     internal class Category
     {
-        public string Name { get; set; }
+        internal string Name { get; set; }
 
         public Category(string name)
         {
