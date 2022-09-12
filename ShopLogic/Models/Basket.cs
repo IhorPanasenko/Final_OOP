@@ -38,6 +38,28 @@ namespace ShopLogic.Models
                     }
                 }
             }
+            else
+            {
+                Console.WriteLine("This product is not in Basket yet");
+            }
+        }
+
+        public void RemoveFromBasket(Product product)
+        {
+            if (IsInBasket(product))
+            {
+                int number = findPosition(product);
+                BasketOfProduct.RemoveAt(number);
+            }
+            else
+            {
+                Console.WriteLine("This product is not in Basket yet");
+            }
+        }
+
+        public void ClearBasket()
+        {
+            BasketOfProduct.Clear();
         }
 
         private bool IsInBasket(Product product)
@@ -53,6 +75,19 @@ namespace ShopLogic.Models
             }
 
             return IsIn;
+        }
+        private int findPosition(Product product)
+        {
+            int counter = 0;
+            foreach (SingleOrder pr in BasketOfProduct)
+            {
+                if (pr.SingleProduct.Name == product.Name)
+                {
+                    break;
+                }
+                counter++;
+            }
+            return counter;
         }
     }
 }
