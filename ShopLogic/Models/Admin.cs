@@ -24,12 +24,12 @@ namespace ShopLogic.Models
 
         public void DeleteCategory(Category category)
         {
-            category.DeleteCategory();
+            category.Name = $"Category {category.Name} Was Deleted";
         }
 
-        public void UpdateCategory(Category category, string newName)
+        public void UpdateCategory()
         {
-            category.UpdateCategory(newName);
+            throw new NotImplementedException();
         }
 
         public void CreateProduct()
