@@ -38,8 +38,10 @@ namespace ShopLogic.Models
                 Console.WriteLine("You want to buy more than we have in warehouse");
                 return false;
             }
-
-
+        }
+        public void ClearBasket()
+        {
+            Basket.ClearBasket();
         }
 
         

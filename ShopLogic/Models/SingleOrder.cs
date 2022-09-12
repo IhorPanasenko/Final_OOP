@@ -10,7 +10,6 @@ namespace ShopLogic.Models
 
         public SingleOrder(Product product, int quantity)
         {
-            
             SingleProduct = product;
             this.quantity = quantity;
         }
