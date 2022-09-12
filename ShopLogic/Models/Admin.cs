@@ -1,4 +1,5 @@
 ﻿
+using System;
 
 namespace ShopLogic
 {
@@ -17,32 +18,32 @@ namespace ShopLogic
 
         public void CrateCategory()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void DeleteCategory()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void UpdateCategory()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void CreateProduct()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void DeleteProduct()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void UpdateProduct()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }
