@@ -24,7 +24,7 @@ namespace ShopLogic.Models
 
         public void DeleteCategory(Category category)
         {
-            category.Name = $"Category {category.Name} Was Deleted";
+            category.DeleteCategory();
         }
 
         public void UpdateCategory()
