@@ -5,7 +5,7 @@ namespace ShopLogic.Models
     internal class SingleOrder
     {
         private int quantity;
-        internal Product SingleProduct;
+        public Product SingleProduct { get; set; }
         internal int Quantity { get { return quantity; } set { quantity = value>=1?value:1;} }
 
         public SingleOrder(Product product, int quantity)
