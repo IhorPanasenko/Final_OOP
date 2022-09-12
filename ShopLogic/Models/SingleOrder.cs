@@ -30,5 +30,10 @@ namespace ShopLogic.Models
         {
             quantity += 1;
         }
+        public void UpdateQuantity(int quantity)
+        {
+            Quantity = quantity;
+        }
+
     }
 }
