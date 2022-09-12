@@ -5,14 +5,17 @@ namespace ShopLogic.Models
 {
     internal class Basket
     {
-        internal List<Product> BasketOfProduct;
+        internal List<SingleOrder> BasketOfProduct;
 
-        public Basket(List<Product> basketOfProduct)
+        public Basket()
         {
-            this.BasketOfProduct = basketOfProduct;
+            BasketOfProduct = new List<SingleOrder>();
         }
         
-        public 
+        public void AddProducts(Product product, int quantity)
+        {
+            BasketOfProduct.Add(new SingleOrder(product, quantity));
+        }
 
     }
 }
