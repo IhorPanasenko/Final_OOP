@@ -59,10 +59,6 @@ namespace ShopLogic.Models
         {
             Basket.DecreaseQuantity(product);
         }
-
-
-
-
         public void Buy()
         {
             throw new NotImplementedException();

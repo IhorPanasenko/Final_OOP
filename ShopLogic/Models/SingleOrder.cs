@@ -34,5 +34,10 @@ namespace ShopLogic.Models
             Quantity = quantity;
         }
 
+        public decimal GetTotalPrice()
+        {
+            decimal res = quantity*SingleProduct.Price;
+            return res;
+        }
     }
 }
