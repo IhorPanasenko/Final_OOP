@@ -1,6 +1,4 @@
-﻿
-
-namespace ShopLogic
+﻿namespace ShopLogic
 {
     internal interface IBuyable
     {
