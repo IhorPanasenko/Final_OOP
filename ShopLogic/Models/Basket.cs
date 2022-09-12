@@ -5,13 +5,14 @@ namespace ShopLogic.Models
 {
     internal class Basket
     {
-        public List<Product> basketOfProduct;
-        public int Quantity { get; set; }
+        internal List<Product> BasketOfProduct;
 
-        public Basket(List<Product> basketOfProduct, int quantity)
+        public Basket(List<Product> basketOfProduct)
         {
-            this.basketOfProduct = basketOfProduct;
-            Quantity = quantity;
+            this.BasketOfProduct = basketOfProduct;
         }
+        
+        public 
+
     }
 }
