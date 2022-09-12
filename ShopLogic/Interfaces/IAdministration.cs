@@ -1,8 +1,8 @@
-﻿namespace ShopLogic
+﻿namespace ShopLogic.Interfaces
 {
     internal interface IAdministration
     {
-        public void CrateCategory();
+        public Category CrateCategory();
         public void DeleteCategory();
         public void UpdateCategory();
         public void CreateProduct();

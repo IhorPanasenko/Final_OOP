@@ -1,16 +1,14 @@
 ﻿
-
-namespace ShopLogic
+namespace ShopLogic.Models
 {
     internal class Product
     {
-        string Name { get; set; }
-        string Description { get; set; }
-        int TotalAmount { get; set; }
-        Category Category { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public int TotalAmount { get; set; }
+        public Category Category { get; set; }
 
-
-        internal Product(string name, string description, int totalAmount, Category category)
+        public Product(string name, string description, int totalAmount, Category category)
         {
             Name = name;
             Description = description;

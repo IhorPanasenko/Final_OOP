@@ -1,24 +1,25 @@
 ﻿
+using ShopLogic.Interfaces;
 using System;
 
-namespace ShopLogic
+namespace ShopLogic.Models
 {
     internal class Admin : Person, IAdministration
     {
-        string Login { get; set; }
-        string Password { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
 
 
-        internal Admin(string login, string password, string first_name, string last_name, DateTime birthDate, string emailAdress)
+        public Admin(string login, string password, string first_name, string last_name, DateTime birthDate, string emailAdress)
             : base(first_name, last_name, birthDate, emailAdress)
         {
             Login = login;
             Password = password;
         }
 
-        public void CrateCategory()
+        public Category CrateCategory()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void DeleteCategory()

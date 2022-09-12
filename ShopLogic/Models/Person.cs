@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace ShopLogic
+namespace ShopLogic.Models
 {
     internal abstract class Person
     {
@@ -11,8 +11,8 @@ namespace ShopLogic
         public string EmailAdress { get; set; }
 
 
-        internal Person(string first_name, string last_name, DateTime birthDate, string emailAdress)
-        {
+        public Person(string first_name, string last_name, DateTime birthDate, string emailAdress)
+        { 
             First_name = first_name;
             Last_name = last_name;
             BirthDate = birthDate;

@@ -1,14 +1,14 @@
 ﻿
+using System.Collections.Generic;
 
-namespace ShopLogic
+namespace ShopLogic.Models
 {
     internal class Basket
     {
-        List<Product> basketOfProduct;
-        int Quantity { get; set; }
+        public List<Product> basketOfProduct;
+        public int Quantity { get; set; }
 
-        
-        internal Basket(List<Product> basketOfProduct, int quantity)
+        public Basket(List<Product> basketOfProduct, int quantity)
         {
             this.basketOfProduct = basketOfProduct;
             Quantity = quantity;

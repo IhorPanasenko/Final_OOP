@@ -1,16 +1,16 @@
 ﻿
 using System;
 
-namespace ShopLogic
+namespace ShopLogic.Models
 {
     internal class Order
     {
-        DateTime DateOfOrder { get; init; }
-        Basket Basket { get; init; }
-        Customer Customer { get; init; }
+        public DateTime DateOfOrder { get; init; }
+        public Basket Basket { get; init; }
+        public  Customer Customer { get; init; }
 
 
-        internal Order(DateTime dateOfOrder, Basket basket, Customer customer)
+        public Order(DateTime dateOfOrder, Basket basket, Customer customer)
         {
             DateOfOrder = dateOfOrder;
             Basket = basket;
