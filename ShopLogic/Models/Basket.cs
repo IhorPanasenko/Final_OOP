@@ -89,6 +89,16 @@ namespace ShopLogic.Models
             }
         }
 
+        public decimal GetTotalPrice()
+        {
+            decimal totalPrice = 0m;
+            foreach(SingleOrder singleOrder in BasketOfProduct)
+            {
+                totalPrice += singleOrder.GetTotalPrice();
+            }
+            return totalPrice;
+        }
+
         private bool IsInBasket(Product product)
         {
             bool IsIn = false;
