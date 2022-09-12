@@ -2,6 +2,6 @@
 {
     internal interface IBuyable
     {
-        internal void Buy();
+        public void Buy();
     }
 }

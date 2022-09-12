@@ -2,12 +2,12 @@
 {
     internal interface IAdministration
     {
-        internal void CrateCategory();
-        internal void DeleteCategory();
-        internal void UpdateCategory();
-        internal void CreateProduct();
-        internal void DeleteProduct();
-        internal void UpdateProduct();
+        public void CrateCategory();
+        public void DeleteCategory();
+        public void UpdateCategory();
+        public void CreateProduct();
+        public void DeleteProduct();
+        public void UpdateProduct();
         
     }
 }
