@@ -19,6 +19,7 @@ namespace ShopLogic.Models
         public void DeleteCategory()
         {
             Name = $"Category {Name} Was Deleted";
+            Name = "";
         }
     }
 }
