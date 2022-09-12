@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopLogic", "ShopLogic\ShopLogic.csproj", "{24F913B1-B507-44EB-B3F2-8DB83FFB34C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopPresentation", "ShopPresentation\ShopPresentation.csproj", "{05D2EB92-717B-4913-821C-88DC4041EA89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24F913B1-B507-44EB-B3F2-8DB83FFB34C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24F913B1-B507-44EB-B3F2-8DB83FFB34C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24F913B1-B507-44EB-B3F2-8DB83FFB34C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24F913B1-B507-44EB-B3F2-8DB83FFB34C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05D2EB92-717B-4913-821C-88DC4041EA89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05D2EB92-717B-4913-821C-88DC4041EA89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05D2EB92-717B-4913-821C-88DC4041EA89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05D2EB92-717B-4913-821C-88DC4041EA89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABD77160-2672-40F7-8FE1-186EF5F400AD}
+	EndGlobalSection
+EndGlobal
