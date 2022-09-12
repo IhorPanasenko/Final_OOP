@@ -18,7 +18,7 @@ namespace ShopLogic
             DateOfRegistration = dateOfRegistration;
         }
 
-        void IBuyable.Buy()
+        public void Buy()
         {
             throw new NotImplementedException();
         }
