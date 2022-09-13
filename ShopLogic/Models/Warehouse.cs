@@ -33,17 +33,17 @@ namespace ShopLogic.Models
             }
         }
 
-        public void DeleteProductFromWarehouse(Product product)
+        public void DeleteProductFromWarehouse(Category category, Product product)
         {
-           /* if (IsInWarehouse(product)){
-                int position = FindProductPosition(product);
-                WarehouseProduct.RemoveAt(position);
+            int index = WarehouseCategories.IndexOf(category);
+            if (index == -1)
+            {
+                Console.WriteLine($"This category ({category.Name}) is not in Warehouse {Address}");
             }
             else
             {
-                Console.WriteLine($"Product {product.Name} is not in warehouse");
-            }*/
-
+                category.AddProduct(product);
+            }
         }
 
         public void AdddProductToWarehouse(Category category, Product product)
