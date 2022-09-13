@@ -120,6 +120,7 @@ namespace ShopLogic.Models
             foreach(SingleOrder singleOrder in BasketOfProduct)
             {
                 res+=singleOrder.ToString();
+                res += "\n";
             }
             return res;
         }
