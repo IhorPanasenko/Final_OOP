@@ -11,6 +11,15 @@ namespace ShopLogic.Models
 
         public Product(string name, string description, int totalAmount, Category category, int price)
         {
+            if (String.IsNullOrEmpty(name) || String.IsNullOrEmpty(description))
+                throw new ArgumentException("Name and Description cant be null or empty");
+
+            else if (totalAmount < 0 || price < 0)
+                throw new ArgumentException("TotalAmount and Price cant be less then zero");
+
+            else if (category is null)
+                throw new ArgumentException("Category cant be null");
+
             Name = name;
             Description = description;
             TotalAmount = totalAmount;
