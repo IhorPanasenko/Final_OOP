@@ -51,6 +51,17 @@ namespace ShopLogic.Models
             }
         }
 
+        public override string ToString()
+        {
+            string res = $"Address {Address}";
+            foreach (Product pr in WarehouseProduct)
+            {
+                res += pr.ToString();
+                res += "\n";
+            }
+            return res;
+        }
+
         private bool IsInWarehouse(Product product)
         {
             bool IsIn = false;
