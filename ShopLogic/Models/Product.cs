@@ -36,5 +36,10 @@ namespace ShopLogic.Models
             Category = category != null ? category : Category;
             Price = price > 0 ? price : 1;
         }
+
+        public override string ToString()
+        {
+            return $"Product:\n {Name}\nIn category {Category.Name}\n{Description}\nTotal amount: {TotalAmount}\nPrice {Price}";
+        }
     }
 }

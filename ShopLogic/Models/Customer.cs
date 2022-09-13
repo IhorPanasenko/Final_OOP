@@ -1,10 +1,11 @@
 ﻿
+using ShopLogic.Interfaces;
 using System;
 using System.Reflection.Metadata.Ecma335;
 
 namespace ShopLogic.Models
 {
-    internal class Customer : Person, IBuyable
+    internal class Customer : Person, IBuyable, ICustomerActions
     {
         public string Login { get; set; }
         public string Password { get; set; }
@@ -44,9 +45,19 @@ namespace ShopLogic.Models
         {
             Basket.ClearBasket();
         }
-        public void UpdateQuantityOfProduct(Product product, int newQuantity)
+        public bool UpdateQuantityOfProduct(Product product, int newQuantity)
         {
-            Basket.UpdateQuantityOfProduct(product, newQuantity);
+            if (newQuantity <= product.TotalAmount)
+            {
+                Basket.UpdateQuantityOfProduct(product, newQuantity);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("You want to buy more than we have in warehouse");
+                return false;
+            }
+           
         }
         public void RemoveFromBasket(Product product)
         {
@@ -87,6 +98,7 @@ namespace ShopLogic.Models
             {
                 if (CreditCard.Money<price)
                 {
+                    Basket.Buy();
                     Console.WriteLine("You havent got enough money to buy this products");
                     return false;
                 }
@@ -97,7 +109,45 @@ namespace ShopLogic.Models
                     return true;
                 }
             }
-            
+        }
+
+        public string MyInfo()
+        {
+            string res =  $"Name: {First_name} {Last_name}\n Email: {this.EmailAdress}\nBirthfay Date {this.BirthDate}\n Login {Login} password: {Password}";
+            if(CreditCard!= null)
+            {
+                res += $"\n CreditCard: { CreditCard}";   
+            }
+            else
+            {
+                res += "\nNo credit card info";
+            }
+            return res;
+        }
+        public string WatchBasket()
+        {
+            if (Basket != null)
+            {
+                return Basket.ToString();
+            }
+            else
+            {
+                return "No Basket info";
+            }
+        }
+
+        public void UpdateInfo(string? login=null, string? password = null, string? first_name=null, string? last_name = null,  string? emailAdress = null)
+        {
+            Login = login != null ? login : Login;
+            Password = password != null ? password : Password;
+            First_name = first_name!= null ? first_name : First_name;
+            Last_name = last_name!= null ? last_name : Last_name;
+            EmailAdress = emailAdress != null ? emailAdress : EmailAdress;
+        }
+
+        public string WatchShopContent(E_shop e_shop)
+        {
+            return e_shop.WatchAsosrtiment();
         }
     }
 }

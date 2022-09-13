@@ -39,5 +39,10 @@ namespace ShopLogic.Models
             decimal res = quantity*SingleProduct.Price;
             return res;
         }
+
+        public override string ToString()
+        {
+            return $"Product {SingleProduct.Name}\t*{Quantity} = {GetTotalPrice()}";
+        }
     }
 }

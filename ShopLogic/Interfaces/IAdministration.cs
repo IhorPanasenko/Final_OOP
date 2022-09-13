@@ -1,4 +1,5 @@
 ﻿using ShopLogic.Models;
+using System.Net;
 
 namespace ShopLogic.Interfaces
 {
@@ -10,6 +11,25 @@ namespace ShopLogic.Interfaces
         public Product CreateProduct(string name, string description, int totalAmount, Category category, int price);
         public void DeleteProduct(Product product);
         public void UpdateProduct(Product product, string? name=null, string? description=null, int totalAmount=-1, Category? category=null, int price = -1);
-        
+
+        public Warehouse CreateWarehouse(string address);
+        public void PutProductToWarehouse(Warehouse warehouse, Product product);
+
+        public void ChangeWarehouseAddress(Warehouse warehouse, string address);
+
+        public void DeleteProductFromWarehouse(Warehouse warehouse, Product product);
+
+        public void DelteWarehouse(Warehouse warehouse);
+
+        public void DeleteProductsWithZeroQuantity(Warehouse warehouse);
+
+        public E_shop CreateShop();
+
+        public void DeleteShop(E_shop e_Shop);
+
+        public void AddWarehouse(E_shop e_Shop,Warehouse warehouse);
+
+        public void DeleteWarehouse(E_shop e_Shop, Warehouse warehouse);
+
     }
 }

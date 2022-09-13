@@ -10,7 +10,7 @@ namespace ShopLogic
 
         public void ClearBasket();
 
-        public void UpdateQuantityOfProduct(Product product, int newQuantity);
+        public bool UpdateQuantityOfProduct(Product product, int newQuantity);
 
         public void RemoveFromBasket(Product product);
 

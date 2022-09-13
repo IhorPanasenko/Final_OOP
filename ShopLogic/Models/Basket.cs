@@ -83,7 +83,14 @@ namespace ShopLogic.Models
                 {
                     if (pr.SingleProduct.Name == product.Name)
                     {
-                        pr.IncreaseQuantity();
+                        if (pr.SingleProduct.TotalAmount >= pr.Quantity + 1)
+                        {
+                            pr.IncreaseQuantity();
+                        }
+                        else
+                        {
+                            Console.WriteLine("You want buy more than we have in warehouse");
+                        }
                     }
                 }
             }
@@ -97,6 +104,25 @@ namespace ShopLogic.Models
                 totalPrice += singleOrder.GetTotalPrice();
             }
             return totalPrice;
+        }
+
+        public void Buy()
+        {
+            foreach(SingleOrder singleOrder in BasketOfProduct)
+            {
+                singleOrder.SingleProduct.TotalAmount -= singleOrder.Quantity;
+            }
+        }
+
+        public override string ToString()
+        {
+            string res = "";
+            foreach(SingleOrder singleOrder in BasketOfProduct)
+            {
+                res+=singleOrder.ToString();
+                res += "\n";
+            }
+            return res;
         }
 
         private bool IsInBasket(Product product)
