@@ -76,5 +76,25 @@ namespace ShopLogic.Models
         {
             warehouse.DeleteProductsWithZeroQuantity();
         }
+
+        public E_shop CreateShop()
+        {
+            return new E_shop();
+        }
+
+        public void DeleteShop(E_shop e_Shop)
+        {
+            e_Shop.DeleteShop();
+        }
+
+        public void AddWarehouse(E_shop e_Shop, Warehouse warehouse)
+        {
+            e_Shop.AddWarehouse(warehouse);
+        }
+
+        public void DeleteWarehouse(E_shop e_Shop, Warehouse warehouse)
+        {
+            e_Shop.DeleteWarehouse(warehouse);
+        }
     }
 }
