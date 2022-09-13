@@ -28,6 +28,7 @@ namespace ShopLogic.Models
             if (index == -1)
             {
                ProductsInCategory.Add(product);
+                Console.WriteLine($"Product {product.Name} was added");
             }
             else
             {
@@ -38,7 +39,7 @@ namespace ShopLogic.Models
         public void DeleteProduct(Product product)
         {
             int index = ProductsInCategory.IndexOf(product);
-            if(index!= -1)
+            if(index != -1)
             {
                 ProductsInCategory.RemoveAt(index);
             }

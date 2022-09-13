@@ -76,6 +76,19 @@ namespace ShopLogic.Models
 
         }
 
+        public void PutProductInWarehouse(Warehouse warehouse, Category category, Product product)
+        {
+            if (!IsInShop(warehouse))
+            {
+                warehouses.Add(warehouse);
+                warehouse.AdddProductToWarehouse(category, product);
+            }
+            else
+            {
+                warehouse.AdddProductToWarehouse(category, product);
+            }
+        }
+
         public string WatchAsosrtiment()
         {
             string res = "";

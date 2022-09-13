@@ -60,7 +60,7 @@ namespace ShopLogic.Models
 
         public void PutProductInShop(E_shop shop, Warehouse warehouse, Category category, Product product)
         {
-            
+            shop.PutProductInWarehouse(warehouse, category, product);   
         }
     }
 }

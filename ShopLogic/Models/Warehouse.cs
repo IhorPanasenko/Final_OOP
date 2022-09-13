@@ -45,6 +45,21 @@ namespace ShopLogic.Models
             }*/
 
         }
+
+        public void AdddProductToWarehouse(Category category, Product product)
+        {
+            int index = WarehouseCategories.IndexOf(category);
+
+            if(index == -1) {
+                WarehouseCategories.Add(category);
+                category.AddProduct(product);
+            }
+            else
+            {
+                category.AddProduct(product);
+            }
+        }
+
         public void DelteWarehouse()
         {
             WarehouseCategories.Clear();
