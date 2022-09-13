@@ -21,10 +21,34 @@ namespace ShopLogic.Models
         {
             Name = newName!=null?newName:Name;
         }
+        public void AddProduct(Product product)
+        {
+            int index = ProductsInCategory.IndexOf(product);
+            if (index == -1)
+            {
+               ProductsInCategory.Add(product);
+            }
+            else
+            {
+                Console.WriteLine("This Product is in category");
+            }
+        }
         public void DeleteCategory()
         {
             Console.WriteLine($"Category {Name} Was Deleted");
+            ProductsInCategory.Clear();
             Name = "";
         }
+
+        public override string ToString()
+        {
+            string res = $"Name of Category: {Name}\n";
+            foreach (Product product in ProductsInCategory)
+            {
+                res+= product.ToString();
+            }
+            return res;
+        }
+
     }
 }
