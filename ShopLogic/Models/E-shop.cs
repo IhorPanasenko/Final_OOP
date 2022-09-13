@@ -48,6 +48,7 @@ namespace ShopLogic.Models
             foreach(Warehouse warehouse in warehouses)
             {
                 res += warehouse.ToString();
+                res += "\n";
             }
             return res;
         }
