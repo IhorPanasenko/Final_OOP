@@ -44,9 +44,19 @@ namespace ShopLogic.Models
         {
             Basket.ClearBasket();
         }
-        public void UpdateQuantityOfProduct(Product product, int newQuantity)
+        public bool UpdateQuantityOfProduct(Product product, int newQuantity)
         {
-            Basket.UpdateQuantityOfProduct(product, newQuantity);
+            if (newQuantity <= product.TotalAmount)
+            {
+                Basket.UpdateQuantityOfProduct(product, newQuantity);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("You want to buy more than we have in warehouse");
+                return false;
+            }
+           
         }
         public void RemoveFromBasket(Product product)
         {
