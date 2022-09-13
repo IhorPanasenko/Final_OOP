@@ -42,7 +42,7 @@ namespace ShopLogic.Models
             }
             else
             {
-                category.AddProduct(product);
+                category.DeleteProduct(product);
             }
         }
 
