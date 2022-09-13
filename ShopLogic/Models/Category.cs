@@ -43,6 +43,10 @@ namespace ShopLogic.Models
             {
                 ProductsInCategory.RemoveAt(index);
             }
+            else
+            {
+                Console.WriteLine($"Product {product.Name} is not category {Name}");
+            }
         }
         public void DeleteCategory()
         {
