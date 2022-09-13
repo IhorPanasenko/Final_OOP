@@ -72,7 +72,7 @@ namespace ShopLogic.Models
         {
             Basket.RemoveFromBasket(product);
         }
-        public string GetCheckByLastorder()
+        public string GetCheckByLastOrder()
         {
             string res;
             if (Order != null)

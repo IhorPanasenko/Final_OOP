@@ -14,7 +14,7 @@ namespace ShopLogic
 
         public void RemoveFromBasket(Product product);
 
-        public string GetCheckByLastorder();
+        public string GetCheckByLastOrder();
 
         public bool Buy(string deliveryAddress);
 
