@@ -7,13 +7,13 @@ namespace ShopLogic.Models
 {
     internal class CreditCard
     {
-        public int? Number { get; set; }
-        public decimal? Money { get; set; }
+        public int Number { get; set; }
+        public decimal Money { get; set; }
 
 
-        public CreditCard(int? number, decimal? money)
+        public CreditCard(int number, decimal money)
         {
-            if (number is null || money is null)
+            if (number == null || money == null)
                 throw new ArgumentException("Number and money cant be null");
             
             else if (money < 0)
