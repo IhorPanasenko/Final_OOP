@@ -112,8 +112,27 @@ namespace ShopLogic.Models
 
         public string MyInfo()
         {
-            return $"Name: {First_name} {Last_name}\n Email: {this.EmailAdress}\nBirthfay Date {this.BirthDate}\n Login {Login} password: {Password}\n CreditCard: {CreditCard}";
+            string res =  $"Name: {First_name} {Last_name}\n Email: {this.EmailAdress}\nBirthfay Date {this.BirthDate}\n Login {Login} password: {Password}";
+            if(CreditCard!= null)
+            {
+                res += $"\n CreditCard: { CreditCard}";   
+            }
+            else
+            {
+                res += "\nNo credit card info";
+            }
+            return res;
         }
-
+        public string WatchBasket()
+        {
+            if (Basket != null)
+            {
+                return Basket.ToString();
+            }
+            else
+            {
+                return "No Basket info";
+            }
+        }
     }
 }
