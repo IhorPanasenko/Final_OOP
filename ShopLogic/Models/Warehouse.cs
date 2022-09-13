@@ -14,9 +14,9 @@ namespace ShopLogic.Models
             WarehouseCategories = new List<Category>();
             Address = adress;
         }
-        public void PutProductToWarehouse(Product product)
+        public void AddCategoryToWarehouse(Category category)
         {
-            //WarehouseCategories.Add(product);
+            WarehouseCategories.Add(category);
         }
 
         public void ChangeWarehouseAddress(string address)
