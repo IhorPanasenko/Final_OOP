@@ -144,5 +144,12 @@ namespace ShopLogic.Models
             Last_name = last_name!= null ? last_name : Last_name;
             EmailAdress = emailAdress != null ? emailAdress : EmailAdress;
         }
+
+        public string WatchShopContent()
+        {
+            string res = "";
+            
+            return res;
+        }
     }
 }
