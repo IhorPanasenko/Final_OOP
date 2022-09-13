@@ -5,18 +5,18 @@ namespace ShopLogic.Models
 {
     internal class Basket
     {
-        internal List<SingleOrder> BasketOfProduct;
+        internal List<ProductInBasket> BasketOfProducts;
 
         public Basket()
         {
-            BasketOfProduct = new List<SingleOrder>();
+            BasketOfProducts = new List<ProductInBasket>();
         }
         
         public void AddProducts(Product product, int quantity)
         {
             if (!IsInBasket(product))
             {
-                BasketOfProduct.Add(new SingleOrder(product, quantity));
+                BasketOfProducts.Add(new ProductInBasket(product, quantity));
             }
             else
             {
@@ -30,7 +30,7 @@ namespace ShopLogic.Models
         {
             if (IsInBasket(product))
             {
-                foreach (SingleOrder pr in BasketOfProduct)
+                foreach (ProductInBasket pr in BasketOfProducts)
                 {
                     if (pr.SingleProduct.Name == product.Name)
                     {
@@ -48,8 +48,8 @@ namespace ShopLogic.Models
         {
             if (IsInBasket(product))
             {
-                int number = findPosition(product);
-                BasketOfProduct.RemoveAt(number);
+                int number = BasketOfProducts.FindIndex((prod) => prod.SingleProduct.Name == product.Name);
+                BasketOfProducts.RemoveAt(number);
             }
             else
             {
@@ -59,14 +59,14 @@ namespace ShopLogic.Models
 
         public void ClearBasket()
         {
-            BasketOfProduct.Clear();
+            BasketOfProducts.Clear();
         }
 
         public void DecreaseQuantity(Product product)
         {
             if (IsInBasket(product))
             {
-                foreach (SingleOrder pr in BasketOfProduct)
+                foreach (ProductInBasket pr in BasketOfProducts)
                 {
                     if (pr.SingleProduct.Name == product.Name)
                     {
@@ -79,7 +79,7 @@ namespace ShopLogic.Models
         {
             if (IsInBasket(product))
             {
-                foreach (SingleOrder pr in BasketOfProduct)
+                foreach (ProductInBasket pr in BasketOfProducts)
                 {
                     if (pr.SingleProduct.Name == product.Name)
                     {
@@ -99,27 +99,27 @@ namespace ShopLogic.Models
         public decimal GetTotalPrice()
         {
             decimal totalPrice = 0m;
-            foreach(SingleOrder singleOrder in BasketOfProduct)
+            foreach(ProductInBasket productInBasket in BasketOfProducts)
             {
-                totalPrice += singleOrder.GetTotalPrice();
+                totalPrice += productInBasket.GetTotalPrice();
             }
             return totalPrice;
         }
 
         public void Buy()
         {
-            foreach(SingleOrder singleOrder in BasketOfProduct)
+            foreach(ProductInBasket ProductInBasket in BasketOfProducts)
             {
-                singleOrder.SingleProduct.TotalAmount -= singleOrder.Quantity;
+                ProductInBasket.SingleProduct.TotalAmount -= ProductInBasket.Quantity;
             }
         }
 
         public override string ToString()
         {
             string res = "";
-            foreach(SingleOrder singleOrder in BasketOfProduct)
+            foreach(ProductInBasket ProductInBasket in BasketOfProducts)
             {
-                res+=singleOrder.ToString();
+                res+=ProductInBasket.ToString();
                 res += "\n";
             }
             return res;
@@ -128,7 +128,7 @@ namespace ShopLogic.Models
         private bool IsInBasket(Product product)
         {
             bool IsIn = false;
-            foreach(SingleOrder pr in BasketOfProduct)
+            foreach(ProductInBasket pr in BasketOfProducts)
             {
                 if(pr.SingleProduct.Name == product.Name)
                 {
@@ -139,10 +139,10 @@ namespace ShopLogic.Models
 
             return IsIn;
         }
-        private int findPosition(Product product)
+      /*  private int findPosition(Product product)
         {
             int counter = 0;
-            foreach (SingleOrder pr in BasketOfProduct)
+            foreach (ProductInBasket pr in BasketOfProducts)
             {
                 if (pr.SingleProduct.Name == product.Name)
                 {
@@ -151,6 +151,6 @@ namespace ShopLogic.Models
                 counter++;
             }
             return counter;
-        }
+        }*/
     }
 }
