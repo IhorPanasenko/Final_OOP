@@ -23,5 +23,13 @@ namespace ShopLogic.Interfaces
 
         public void DeleteProductsWithZeroQuantity(Warehouse warehouse);
 
+        public E_shop CreateShop();
+
+        public void DeleteShop(E_shop e_Shop);
+
+        public void AddWarehouse(E_shop e_Shop,Warehouse warehouse);
+
+        public void DeleteWarehouse(E_shop e_Shop, Warehouse warehouse);
+
     }
 }
