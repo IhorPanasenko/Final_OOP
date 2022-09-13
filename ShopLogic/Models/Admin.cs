@@ -46,5 +46,35 @@ namespace ShopLogic.Models
         {
             product.Update(name, description, totalAmount, category, price);
         }
+
+        public void CreateWarehouse(string address)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PutProductToWarehouse(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ChangeWarehouseAddress(string address)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteProductFromWarehouse(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DelteWarehouse()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteProductsWithZeroQuantity()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
