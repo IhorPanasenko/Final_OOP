@@ -31,8 +31,9 @@ namespace ShopLogic.Models
             return new Category(Name);
         }
 
-        public void DeleteCategory(Category category)
+        public void DeleteCategory(Warehouse warehouse, Category category)
         {
+            warehouse.DeleteCategory(category);
             category.DeleteCategory();
         }
 
@@ -46,8 +47,9 @@ namespace ShopLogic.Models
             return new Product(name, description, totalAmount, price);  
         }
 
-        public void DeleteProduct(Product product)
+        public void DeleteProduct(Category category, Product product)
         {
+            category.DeleteProduct(product);
             product.Delete();
         }
 
@@ -56,9 +58,9 @@ namespace ShopLogic.Models
             product.Update(name, description, totalAmount, price);
         }
 
-        public void DeleteProductsWithZeroQuantity(Warehouse warehouse)
+        public void PutProductInShop(E_shop shop, Warehouse warehouse, Category category, Product product)
         {
-            warehouse.DeleteProductsWithZeroQuantity();
+            
         }
     }
 }

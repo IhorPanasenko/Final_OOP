@@ -100,20 +100,5 @@ namespace ShopLogic.Models
 
             return IsIn;
         }
-       /* private int FindWarehousePosition(Warehouse warehouse)
-        {
-            int counter = 0;
-            foreach (Warehouse whouse in Warehouses)
-            {
-                if (whouse.Address == warehouse.Address)
-                {
-                    break;
-                }
-                counter++;
-            }
-
-            return counter;
-        }*/
-
     }
 }

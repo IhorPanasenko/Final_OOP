@@ -24,6 +24,15 @@ namespace ShopLogic.Models
             Address = address != null ? address : Address;
         }
 
+        public void DeleteCategory(Category category)
+        {
+            int index = WarehouseCategories.IndexOf(category);
+            if (index != -1)
+            {
+                WarehouseCategories.RemoveAt(index);
+            }
+        }
+
         public void DeleteProductFromWarehouse(Product product)
         {
            /* if (IsInWarehouse(product)){

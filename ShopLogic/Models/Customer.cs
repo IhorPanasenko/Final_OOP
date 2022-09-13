@@ -105,7 +105,7 @@ namespace ShopLogic.Models
                 }
                 else
                 {
-                    Console.WriteLine("We got your payment");
+                    Console.WriteLine("We got your payment. Wait for delivering in 24 hours");
                     //Basket.ClearBasket();
                     return true;
                 }

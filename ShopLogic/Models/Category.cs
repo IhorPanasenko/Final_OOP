@@ -34,6 +34,15 @@ namespace ShopLogic.Models
                 Console.WriteLine("This Product is in category");
             }
         }
+
+        public void DeleteProduct(Product product)
+        {
+            int index = ProductsInCategory.IndexOf(product);
+            if(index!= -1)
+            {
+                ProductsInCategory.RemoveAt(index);
+            }
+        }
         public void DeleteCategory()
         {
             Console.WriteLine($"Category {Name} Was Deleted");
