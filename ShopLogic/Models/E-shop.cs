@@ -88,9 +88,16 @@ namespace ShopLogic.Models
             }
         }
 
-        public void DeleteProductFromWarehouse(Warehouse warehouse, Category category, Product product)
+        public void DeleteProductFromShop(Warehouse warehouse, Category category, Product product)
         {
-
+            if (!IsInShop(warehouse))
+            {
+                Console.WriteLine($"This Warehouse ({warehouse.Address}) is not in the shop");
+            }
+            else
+            {
+                warehouse.AdddProductToWarehouse(category, product);
+            }
         }
 
         public string WatchAsosrtiment()
