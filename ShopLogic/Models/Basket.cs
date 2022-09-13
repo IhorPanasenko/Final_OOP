@@ -114,6 +114,16 @@ namespace ShopLogic.Models
             }
         }
 
+        public override string ToString()
+        {
+            string res = "";
+            foreach(SingleOrder singleOrder in BasketOfProduct)
+            {
+                res+=singleOrder.ToString();
+            }
+            return res;
+        }
+
         private bool IsInBasket(Product product)
         {
             bool IsIn = false;
