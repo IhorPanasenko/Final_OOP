@@ -73,7 +73,6 @@ namespace ShopLogic.Models
                 int index = warehouses.IndexOf(warehouse);
                 Warehouses.RemoveAt(index);
             }
-
         }
 
         public void PutProductInWarehouse(Warehouse warehouse, Category category, Product product)
@@ -87,6 +86,11 @@ namespace ShopLogic.Models
             {
                 warehouse.AdddProductToWarehouse(category, product);
             }
+        }
+
+        public void DeleteProductFromWarehouse(Warehouse warehouse, Category category, Product product)
+        {
+
         }
 
         public string WatchAsosrtiment()
