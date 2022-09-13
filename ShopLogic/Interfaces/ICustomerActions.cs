@@ -10,6 +10,6 @@ namespace ShopLogic.Interfaces
     {
         public string MyInfo();
         public string WatchBasket();
-        public void UpdateInfo();
+        public void UpdateInfo(string login, string password, string first_name, string last_name, DateTime birthDate, string emailAdress);
     }
 }

@@ -1,10 +1,11 @@
 ﻿
+using ShopLogic.Interfaces;
 using System;
 using System.Reflection.Metadata.Ecma335;
 
 namespace ShopLogic.Models
 {
-    internal class Customer : Person, IBuyable
+    internal class Customer : Person, IBuyable, ICustomerActions
     {
         public string Login { get; set; }
         public string Password { get; set; }
@@ -133,6 +134,11 @@ namespace ShopLogic.Models
             {
                 return "No Basket info";
             }
+        }
+
+        public void UpdateInfo(string login, string password, string first_name, string last_name, DateTime birthDate, string emailAdress)
+        {
+            throw new NotImplementedException();
         }
     }
 }
