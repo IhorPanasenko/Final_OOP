@@ -1,21 +1,22 @@
 ﻿
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace ShopLogic.Models
 {
     internal class Warehouse
     {
-        public List<Product> WarehouseProduct { get; set; }
+        public List<Category> WarehouseCategories { get; set; }
         public string Address { get; set; }
 
         public Warehouse(string adress)
         {
-            WarehouseProduct = new List<Product>();
+            WarehouseCategories = new List<Category>();
             Address = adress;
         }
         public void PutProductToWarehouse(Product product)
         {
-            WarehouseProduct.Add(product);
+            //WarehouseCategories.Add(product);
         }
 
         public void ChangeWarehouseAddress(string address)
@@ -25,71 +26,38 @@ namespace ShopLogic.Models
 
         public void DeleteProductFromWarehouse(Product product)
         {
-            if (IsInWarehouse(product)){
+           /* if (IsInWarehouse(product)){
                 int position = FindProductPosition(product);
                 WarehouseProduct.RemoveAt(position);
             }
             else
             {
                 Console.WriteLine($"Product {product.Name} is not in warehouse");
-            }
+            }*/
 
         }
         public void DelteWarehouse()
         {
-            WarehouseProduct.Clear();
+            WarehouseCategories.Clear();
         }
 
         public void DeleteProductsWithZeroQuantity()
         {
-            foreach (Product pr in WarehouseProduct)
+            foreach (Category cat in WarehouseCategories)
             {
-                if(pr.TotalAmount == 0)
-                {
-                    DeleteProductFromWarehouse(pr);
-                }
+                ///////////////////////////////////////////////////////////
             }
         }
 
         public override string ToString()
         {
             string res = $"Address {Address}";
-            foreach (Product pr in WarehouseProduct)
+            foreach (Category cat in WarehouseCategories)
             {
-                res += pr.ToString();
+                res += cat.ToString();
                 res += "\n";
             }
             return res;
         }
-
-        private bool IsInWarehouse(Product product)
-        {
-            bool IsIn = false;
-            foreach (Product pr in WarehouseProduct)
-            {
-                if (pr.Name == product.Name)
-                {
-                    IsIn = true;
-                    break;
-                }
-            }
-
-            return IsIn;
-        }
-        private int FindProductPosition(Product product)
-        {
-            int counter = 0;
-            foreach (Product pr in WarehouseProduct)
-            {
-                if (pr.Name == product.Name)
-                {
-                    break;
-                }
-                counter++;
-            }
-
-            return counter;
-        }
-
     }
 }
