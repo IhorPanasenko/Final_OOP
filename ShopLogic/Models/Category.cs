@@ -7,6 +7,7 @@ namespace ShopLogic.Models
     internal class Category
     {
         internal string Name { get; set; }
+        public List<Product> ProductsInCategory { get; set; }
 
         public Category(string name)
         {
@@ -14,6 +15,7 @@ namespace ShopLogic.Models
                 throw new ArgumentException("Name of category cant be null or empty");
           
             Name = name;
+            ProductsInCategory = new List<Product>();
         }
         public void UpdateCategory(string newName)
         {

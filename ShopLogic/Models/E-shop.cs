@@ -8,12 +8,13 @@ namespace ShopLogic.Models
 {
     internal class E_shop
     {
-        private List<Warehouse> warehouses; //{ get; set;}
+        private List<Warehouse> warehouses;
 
         public List<Warehouse> Warehouses { get { return warehouses; } }
         public E_shop()
         {
             warehouses = new List<Warehouse>();
+            
         }
 
         public void DeleteShop()
