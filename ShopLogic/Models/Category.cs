@@ -11,7 +11,7 @@ namespace ShopLogic.Models
         public Category(string name)
         {
             if(string.IsNullOrEmpty(name))
-                throw new ArgumentNullException("Name of category cant be null or empty");
+                throw new ArgumentException("Name of category cant be null or empty");
           
             Name = name;
         }
