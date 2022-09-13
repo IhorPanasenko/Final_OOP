@@ -136,9 +136,13 @@ namespace ShopLogic.Models
             }
         }
 
-        public void UpdateInfo(string login, string password, string first_name, string last_name, DateTime birthDate, string emailAdress)
+        public void UpdateInfo(string? login=null, string? password = null, string? first_name=null, string? last_name = null,  string? emailAdress = null)
         {
-            throw new NotImplementedException();
+            Login = login != null ? login : Login;
+            Password = password != null ? password : Password;
+            First_name = first_name!= null ? first_name : First_name;
+            Last_name = last_name!= null ? last_name : Last_name;
+            EmailAdress = emailAdress != null ? emailAdress : EmailAdress;
         }
     }
 }
