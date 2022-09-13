@@ -54,7 +54,7 @@ namespace ShopLogic.Models
         {
             Basket.ClearBasket();
         }
-        public bool UpdateQuantityOfProduct(Product product, int newQuantity)
+        public bool UpdateQuantityOfProductInBasket(Product product, int newQuantity)
         {
             if (newQuantity <= product.TotalAmount)
             {
@@ -71,14 +71,6 @@ namespace ShopLogic.Models
         public void RemoveFromBasket(Product product)
         {
             Basket.RemoveFromBasket(product);
-        }
-        public void IncreaseQuantityOfProduct(Product product)
-        {
-            Basket.IncreaseQuantity(product);
-        }
-        public void DecreaseQuantity(Product product)
-        {
-            Basket.DecreaseQuantity(product);
         }
         public string GetCheckByLastorder()
         {

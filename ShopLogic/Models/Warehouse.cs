@@ -41,14 +41,6 @@ namespace ShopLogic.Models
             WarehouseCategories.Clear();
         }
 
-        public void DeleteProductsWithZeroQuantity()
-        {
-            foreach (Category cat in WarehouseCategories)
-            {
-                ///////////////////////////////////////////////////////////
-            }
-        }
-
         public override string ToString()
         {
             string res = $"Address {Address}";

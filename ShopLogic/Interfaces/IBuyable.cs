@@ -10,13 +10,9 @@ namespace ShopLogic
 
         public void ClearBasket();
 
-        public bool UpdateQuantityOfProduct(Product product, int newQuantity);
+        public bool UpdateQuantityOfProductInBasket(Product product, int newQuantity);
 
         public void RemoveFromBasket(Product product);
-
-        public void IncreaseQuantityOfProduct(Product product);
-
-        public void DecreaseQuantity(Product product);
 
         public string GetCheckByLastorder();
 

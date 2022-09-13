@@ -43,7 +43,7 @@ namespace ShopLogic.Models
 
         public override string ToString()
         {
-            string res = $"Name of Category: {Name}\n";
+            string res = $"\nName of Category: {Name}\n";
             foreach (Product product in ProductsInCategory)
             {
                 res+= product.ToString();

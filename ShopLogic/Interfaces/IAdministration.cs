@@ -11,7 +11,6 @@ namespace ShopLogic.Interfaces
         public Product CreateProduct(string name, string description, int totalAmount, int price);
         public void DeleteProduct(Product product);
         public void UpdateProduct(Product product, string? name=null, string? description=null, int totalAmount=-1, int price = -1);
-        public void DeleteProductsWithZeroQuantity(Warehouse warehouse);
 
     }
 }

@@ -62,40 +62,6 @@ namespace ShopLogic.Models
             BasketOfProducts.Clear();
         }
 
-        public void DecreaseQuantity(Product product)
-        {
-            if (IsInBasket(product))
-            {
-                foreach (ProductInBasket pr in BasketOfProducts)
-                {
-                    if (pr.SingleProduct.Name == product.Name)
-                    {
-                        pr.DecreaseQuantity();
-                    }
-                }
-            }
-        }
-        public void IncreaseQuantity(Product product)
-        {
-            if (IsInBasket(product))
-            {
-                foreach (ProductInBasket pr in BasketOfProducts)
-                {
-                    if (pr.SingleProduct.Name == product.Name)
-                    {
-                        if (pr.SingleProduct.TotalAmount >= pr.Quantity + 1)
-                        {
-                            pr.IncreaseQuantity();
-                        }
-                        else
-                        {
-                            Console.WriteLine("You want buy more than we have in warehouse");
-                        }
-                    }
-                }
-            }
-        }
-
         public decimal GetTotalPrice()
         {
             decimal totalPrice = 0m;
@@ -139,18 +105,5 @@ namespace ShopLogic.Models
 
             return IsIn;
         }
-      /*  private int findPosition(Product product)
-        {
-            int counter = 0;
-            foreach (ProductInBasket pr in BasketOfProducts)
-            {
-                if (pr.SingleProduct.Name == product.Name)
-                {
-                    break;
-                }
-                counter++;
-            }
-            return counter;
-        }*/
     }
 }

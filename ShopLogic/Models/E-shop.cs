@@ -70,8 +70,8 @@ namespace ShopLogic.Models
         {
             if (IsInShop(warehouse))
             {
-                int position = FindWarehousePosition(warehouse);
-                Warehouses.RemoveAt(position);
+                int index = warehouses.IndexOf(warehouse);
+                Warehouses.RemoveAt(index);
             }
 
         }
@@ -100,7 +100,7 @@ namespace ShopLogic.Models
 
             return IsIn;
         }
-        private int FindWarehousePosition(Warehouse warehouse)
+       /* private int FindWarehousePosition(Warehouse warehouse)
         {
             int counter = 0;
             foreach (Warehouse whouse in Warehouses)
@@ -113,7 +113,7 @@ namespace ShopLogic.Models
             }
 
             return counter;
-        }
+        }*/
 
     }
 }
