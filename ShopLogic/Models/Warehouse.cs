@@ -6,12 +6,21 @@ namespace ShopLogic.Models
     internal class Warehouse
     {
         public List<Product> WarehouseProduct { get; set; }
-        public string Adress { get; init; }
+        public string Address { get; set; }
 
         public Warehouse(string adress)
         {
             WarehouseProduct = new List<Product>();
-            Adress = adress;
+            Address = adress;
+        }
+        public void PutProductToWarehouse(Product product)
+        {
+            WarehouseProduct.Add(product);
+        }
+
+        public void ChangeWarehouseAddress(string address)
+        {
+            Address = address != null ? address : Address;
         }
 
     }
