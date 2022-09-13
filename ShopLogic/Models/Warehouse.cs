@@ -23,5 +23,62 @@ namespace ShopLogic.Models
             Address = address != null ? address : Address;
         }
 
+        public void DeleteProductFromWarehouse(Product product)
+        {
+            if (IsInWarehouse(product)){
+                int position = FindProductPosition(product);
+                WarehouseProduct.RemoveAt(position);
+            }
+            else
+            {
+                Console.WriteLine($"Product {product.Name} is not in warehouse");
+            }
+
+        }
+        public void DelteWarehouse()
+        {
+            WarehouseProduct.Clear();
+        }
+
+        public void DeleteProductsWithZeroQuantity()
+        {
+            foreach (Product pr in WarehouseProduct)
+            {
+                if(pr.TotalAmount == 0)
+                {
+                    DeleteProductFromWarehouse(pr);
+                }
+            }
+        }
+
+        private bool IsInWarehouse(Product product)
+        {
+            bool IsIn = false;
+            foreach (Product pr in WarehouseProduct)
+            {
+                if (pr.Name == product.Name)
+                {
+                    IsIn = true;
+                    break;
+                }
+            }
+
+            return IsIn;
+        }
+        private int FindProductPosition(Product product)
+        {
+            int counter = 0;
+            foreach (Product pr in WarehouseProduct)
+            {
+                if (pr.Name == product.Name)
+                {
+                    break;
+                }
+                counter++;
+            }
+
+            return counter;
+        }
+
     }
 }
