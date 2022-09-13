@@ -83,7 +83,14 @@ namespace ShopLogic.Models
                 {
                     if (pr.SingleProduct.Name == product.Name)
                     {
-                        pr.IncreaseQuantity();
+                        if (pr.SingleProduct.TotalAmount >= pr.Quantity + 1)
+                        {
+                            pr.IncreaseQuantity();
+                        }
+                        else
+                        {
+                            Console.WriteLine("You want buy more than we have in warehouse");
+                        }
                     }
                 }
             }
