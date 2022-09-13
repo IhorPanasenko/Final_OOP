@@ -13,15 +13,15 @@ namespace ShopLogic.Interfaces
         public void UpdateProduct(Product product, string? name=null, string? description=null, int totalAmount=-1, Category? category=null, int price = -1);
 
         public Warehouse CreateWarehouse(string address);
-        public void PutProductToWarehouse(Product product);
+        public void PutProductToWarehouse(Warehouse warehouse, Product product);
 
-        public void ChangeWarehouseAddress(string address);
+        public void ChangeWarehouseAddress(Warehouse warehouse, string address);
 
-        public void DeleteProductFromWarehouse(Product product);
+        public void DeleteProductFromWarehouse(Warehouse warehouse, Product product);
 
-        public void DelteWarehouse();
+        public void DelteWarehouse(Warehouse warehouse);
 
-        public void DeleteProductsWithZeroQuantity();
+        public void DeleteProductsWithZeroQuantity(Warehouse warehouse);
 
     }
 }

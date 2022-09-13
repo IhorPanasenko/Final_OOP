@@ -52,29 +52,29 @@ namespace ShopLogic.Models
             return new Warehouse(address);
         }
 
-        public void PutProductToWarehouse(Product product)
+        public void PutProductToWarehouse(Warehouse warehouse, Product product)
         {
-            throw new NotImplementedException();
+            warehouse.PutProductToWarehouse(product);   
         }
 
-        public void ChangeWarehouseAddress(string address)
+        public void ChangeWarehouseAddress(Warehouse warehouse, string address)
         {
-            throw new NotImplementedException();
+            warehouse.ChangeWarehouseAddress(address);
         }
 
-        public void DeleteProductFromWarehouse(Product product)
+        public void DeleteProductFromWarehouse(Warehouse warehouse, Product product)
         {
-            throw new NotImplementedException();
+            warehouse.DeleteProductFromWarehouse(product);
         }
 
-        public void DelteWarehouse()
+        public void DelteWarehouse(Warehouse warehouse)
         {
-            throw new NotImplementedException();
+            warehouse.DelteWarehouse();
         }
 
-        public void DeleteProductsWithZeroQuantity()
+        public void DeleteProductsWithZeroQuantity(Warehouse warehouse)
         {
-            throw new NotImplementedException();
+            warehouse.DeleteProductsWithZeroQuantity();
         }
     }
 }
