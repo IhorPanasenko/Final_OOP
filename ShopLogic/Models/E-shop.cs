@@ -96,7 +96,7 @@ namespace ShopLogic.Models
             }
             else
             {
-                warehouse.AdddProductToWarehouse(category, product);
+                warehouse.DeleteProductFromWarehouse(category, product);
             }
         }
 
