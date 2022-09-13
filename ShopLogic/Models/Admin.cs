@@ -56,54 +56,9 @@ namespace ShopLogic.Models
             product.Update(name, description, totalAmount, category, price);
         }
 
-        public Warehouse CreateWarehouse(string address)
-        {
-            return new Warehouse(address);
-        }
-
-        public void PutProductToWarehouse(Warehouse warehouse, Product product)
-        {
-            warehouse.PutProductToWarehouse(product);   
-        }
-
-        public void ChangeWarehouseAddress(Warehouse warehouse, string address)
-        {
-            warehouse.ChangeWarehouseAddress(address);
-        }
-
-        public void DeleteProductFromWarehouse(Warehouse warehouse, Product product)
-        {
-            warehouse.DeleteProductFromWarehouse(product);
-        }
-
-        public void DelteWarehouse(Warehouse warehouse)
-        {
-            warehouse.DelteWarehouse();
-        }
-
         public void DeleteProductsWithZeroQuantity(Warehouse warehouse)
         {
             warehouse.DeleteProductsWithZeroQuantity();
-        }
-
-        public E_shop CreateShop()
-        {
-            return new E_shop();
-        }
-
-        public void DeleteShop(E_shop e_Shop)
-        {
-            e_Shop.DeleteShop();
-        }
-
-        public void AddWarehouse(E_shop e_Shop, Warehouse warehouse)
-        {
-            e_Shop.AddWarehouse(warehouse);
-        }
-
-        public void DeleteWarehouse(E_shop e_Shop, Warehouse warehouse)
-        {
-            e_Shop.DeleteWarehouse(warehouse);
         }
     }
 }
