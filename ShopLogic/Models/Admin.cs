@@ -47,9 +47,9 @@ namespace ShopLogic.Models
             product.Update(name, description, totalAmount, category, price);
         }
 
-        public void CreateWarehouse(string address)
+        public Warehouse CreateWarehouse(string address)
         {
-            throw new NotImplementedException();
+            return new Warehouse(address);
         }
 
         public void PutProductToWarehouse(Product product)
