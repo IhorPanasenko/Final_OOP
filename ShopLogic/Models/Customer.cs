@@ -145,11 +145,9 @@ namespace ShopLogic.Models
             EmailAdress = emailAdress != null ? emailAdress : EmailAdress;
         }
 
-        public string WatchShopContent()
+        public string WatchShopContent(E_shop e_shop)
         {
-            string res = "";
-            
-            return res;
+            return e_shop.WatchAsosrtiment();
         }
     }
 }

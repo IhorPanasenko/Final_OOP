@@ -41,6 +41,16 @@ namespace ShopLogic.Models
             }
 
         }
+
+        public string WatchAsosrtiment()
+        {
+            string res = "";
+            foreach(Warehouse warehouse in warehouses)
+            {
+                res += warehouse.ToString();
+            }
+            return res;
+        }
         private bool IsInShop(Warehouse warehouse)
         { 
             bool IsIn = false;
@@ -69,7 +79,6 @@ namespace ShopLogic.Models
 
             return counter;
         }
-
 
     }
 }
