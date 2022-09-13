@@ -14,6 +14,12 @@ namespace ShopLogic.Models
 
         public Order(DateTime dateOfOrder, Basket basket, Customer customer, decimal totalPrice, string deliveryAddress)
         {
+            if (basket is null || customer is null)
+                throw new ArgumentException("Basket and Customer cant be null");
+
+            else if (String.IsNullOrEmpty(deliveryAddress))
+                throw new ArgumentException("DeliveryAddress cant be null or empty");
+
             DateOfOrder = dateOfOrder;
             Basket = basket;
             Customer = customer;

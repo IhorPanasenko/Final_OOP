@@ -13,6 +13,15 @@ namespace ShopLogic.Models
         public Admin(string login, string password, string first_name, string last_name, DateTime birthDate, string emailAdress)
             : base(first_name, last_name, birthDate, emailAdress)
         {
+            if (String.IsNullOrEmpty(login) || String.IsNullOrEmpty(password))
+            {
+                throw new ArgumentException("Login and password cant be null or empty");
+            }
+            else if (password.Length < 6)
+            {
+                throw new ArgumentException("Password cannot be shorter than six characters");
+            }
+
             Login = login;
             Password = password;
         }

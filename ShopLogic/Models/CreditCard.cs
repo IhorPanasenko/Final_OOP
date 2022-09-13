@@ -13,6 +13,12 @@ namespace ShopLogic.Models
 
         public CreditCard(int number, decimal money)
         {
+            if (number == null || money == null)
+                throw new ArgumentException("Number and money cant be null");
+            
+            else if (money < 0)
+                throw new ArgumentException("Count of money on card cant be less than zero");
+            
             Number = number;
             Money = money;
         }
