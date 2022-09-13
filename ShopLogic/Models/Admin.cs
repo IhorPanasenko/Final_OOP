@@ -47,7 +47,7 @@ namespace ShopLogic.Models
             return new Product(name, description, totalAmount, price);  
         }
 
-        public void DeleteProduct(Category category, Product product)
+        public void DeleteProductFromShop(E_shop shop, Warehouse warehouse, Category category, Product product)
         {
             category.DeleteProduct(product);
             product.Delete();
