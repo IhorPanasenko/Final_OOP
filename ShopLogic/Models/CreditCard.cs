@@ -1,14 +1,14 @@
 ﻿
 
-namespace ShopLogic
+namespace ShopLogic.Models
 {
     internal class CreditCard
     {
-        int Number { get; set; }
-        decimal Money { get; set; }
+        public int Number { get; set; }
+        public decimal Money { get; set; }
 
 
-        internal CreditCard(int number, decimal money)
+        public CreditCard(int number, decimal money)
         {
             Number = number;
             Money = money;

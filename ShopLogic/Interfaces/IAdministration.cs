@@ -1,15 +1,15 @@
-﻿
+﻿using ShopLogic.Models;
 
-namespace ShopLogic
+namespace ShopLogic.Interfaces
 {
     internal interface IAdministration
     {
-        internal void CrateCategory();
-        internal void DeleteCategory();
-        internal void UpdateCategory();
-        internal void CreateProduct();
-        internal void DeleteProduct();
-        internal void UpdateProduct();
+        public Category CrateCategory(string Name);
+        public void DeleteCategory(Category category);
+        public void UpdateCategory(Category category, string newName);
+        public Product CreateProduct(string name, string description, int totalAmount, Category category, int price);
+        public void DeleteProduct(Product product);
+        public void UpdateProduct(Product product, string? name=null, string? description=null, int totalAmount=-1, Category? category=null, int price = -1);
         
     }
 }
