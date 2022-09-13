@@ -30,9 +30,9 @@ namespace ShopLogic.Models
         public string GetCheck()
         {
             string check = $"{DateOfOrder} :date of order cofirmation\nYou buy on {TotalPrice}$ \nPayment was done buy card:{Customer.CreditCard}\nYou ordered: ";
-            foreach (SingleOrder sOrder in Basket.BasketOfProduct)
+            foreach (ProductInBasket product in Basket.BasketOfProducts)
             {
-                check += $"\n{sOrder.SingleProduct.Name}\t*{sOrder.Quantity} = {sOrder.GetTotalPrice()}";
+                check += $"\n{product.SingleProduct.Name}\t*{product.Quantity} = {product.GetTotalPrice()}";
             }
             return check;
         }

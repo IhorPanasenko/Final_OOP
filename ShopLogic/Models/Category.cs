@@ -21,6 +21,7 @@ namespace ShopLogic.Models
         {
             Name = newName!=null?newName:Name;
         }
+
         public void AddProduct(Product product)
         {
             int index = ProductsInCategory.IndexOf(product);
