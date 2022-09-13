@@ -13,6 +13,9 @@ namespace ShopLogic.Models
             Number = number;
             Money = money;
         }
+        public string @override ToString()
+        {
 
+        }
     }
 }
