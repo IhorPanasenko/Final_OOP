@@ -97,6 +97,7 @@ namespace ShopLogic.Models
             {
                 if (CreditCard.Money<price)
                 {
+                    Basket.Buy();
                     Console.WriteLine("You havent got enough money to buy this products");
                     return false;
                 }

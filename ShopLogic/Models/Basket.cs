@@ -106,6 +106,14 @@ namespace ShopLogic.Models
             return totalPrice;
         }
 
+        public void Buy()
+        {
+            foreach(SingleOrder singleOrder in BasketOfProduct)
+            {
+                singleOrder.SingleProduct.TotalAmount -= singleOrder.Quantity;
+            }
+        }
+
         private bool IsInBasket(Product product)
         {
             bool IsIn = false;
