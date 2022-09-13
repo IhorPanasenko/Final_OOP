@@ -23,10 +23,22 @@ namespace ShopLogic.Models
 
         public void AddWarehouse(Warehouse warehouse)
         {
-            warehouses.Add(warehouse); 
+            if (IsInShop(warehouse))
+            {
+                warehouses.Add(warehouse);
+            }
+            else
+            {
+                Console.WriteLine("This warehouse is already in shop");
+            }
         }
-        public void DeleteWarehouse()
+        public void DeleteWarehouse(Warehouse warehouse)
         {
+            if (IsInShop(warehouse))
+            {
+                int position = FindWarehousePosition(warehouse);
+                Warehouses.RemoveAt(position);
+            }
 
         }
         private bool IsInShop(Warehouse warehouse)
@@ -43,7 +55,7 @@ namespace ShopLogic.Models
 
             return IsIn;
         }
-        private int FindProductPosition(Warehouse warehouse)
+        private int FindWarehousePosition(Warehouse warehouse)
         {
             int counter = 0;
             foreach (Warehouse whouse in Warehouses)
